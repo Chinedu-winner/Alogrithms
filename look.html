@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard UI</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  background: #f5f7fa;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #555;
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+  background: #1abc9c;
+  color: #fff;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 20px 30px;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.search {
+  width: 300px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.card span {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Charts */
+.charts {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.chart-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  height: 250px;
+}
+
+.chart-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    #e3f2fd 25%,
+    #bbdefb 25%,
+    #bbdefb 50%,
+    #e3f2fd 50%,
+    #e3f2fd 75%,
+    #bbdefb 75%
+  );
+  background-size: 40px 40px;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>Sedap.</h2>
+  <ul>
+    <li class="active">Dashboard</li>
+    <li>Orders</li>
+    <li>Customers</li>
+    <li>Analytics</li>
+    <li>Messages</li>
+    <li>Settings</li>
+  </ul>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <input type="text" class="search" placeholder="Search..." />
+    <div class="profile">
+      <span>Hello, Samuel</span>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards">
+    <div class="card">
+      <h3>75</h3>
+      <span>Total Orders</span>
+    </div>
+    <div class="card">
+      <h3>357</h3>
+      <span>Total Revenue</span>
+    </div>
+    <div class="card">
+      <h3>65</h3>
+      <span>Delivered</span>
+    </div>
+    <div class="card">
+      <h3>$128</h3>
+      <span>Pending</span>
+    </div>
+  </div>
+
+  <!-- Charts -->
+  <div class="charts">
+    <div class="chart-box">
+      <h4>Chart Order</h4>
+      <div class="chart-placeholder"></div>
+    </div>
+
+    <div class="chart-box">
+      <h4>Customer Map</h4>
+      <div class="chart-placeholder"></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

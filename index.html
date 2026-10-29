@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Build Array</title>
+</head>
+<body>
+<input type="number" id="arraytheValue" placeholder="Enter a number">
+<button onclick="addBtn()">Add to Array</button>
+
+<script>
+function addBtn(arrA, arrB){
+    const onlyInA = arrA.filter(item=>!arrB.includes(item));
+    const onlyInB = arrB.filter(item=>!arrA.includes(item));
+    return {
+        onlyInA,
+        onlyInB
+    }
+    const arrA = [1, 2, 3, 4];
+    const arrB = [3, 4, 5, 6];
+
+    console.log(getUniqueValues(arrA, arrB));
+    [1,2, 5, 6]
+}
+</script>
+</body>
+</html>
